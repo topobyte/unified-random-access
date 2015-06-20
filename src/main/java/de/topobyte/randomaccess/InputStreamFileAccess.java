@@ -72,6 +72,20 @@ public class InputStreamFileAccess implements FileAccess
 	}
 
 	@Override
+	public void readFully(byte[] buffer, int off, int length)
+			throws IOException
+	{
+		int done = 0;
+		int todo = length;
+		while (todo > 0) {
+			int got = input.read(buffer, off + done, todo);
+			done += got;
+			todo -= got;
+		}
+		filePointer += buffer.length;
+	}
+
+	@Override
 	public int read(byte[] buffer, int start, int length) throws IOException
 	{
 		int r = input.read(buffer, start, length);

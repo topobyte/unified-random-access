@@ -55,6 +55,12 @@ public class RandomAccessFileAccess implements FileAccess
 	}
 
 	@Override
+	public void readFully(byte[] buffer, int off, int len) throws IOException
+	{
+		file.readFully(buffer, off, len);
+	}
+
+	@Override
 	public int read(byte[] buffer, int off, int len) throws IOException
 	{
 		return file.read(buffer, off, len);

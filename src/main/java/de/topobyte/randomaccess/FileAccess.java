@@ -30,6 +30,9 @@ public interface FileAccess
 
 	public void readFully(byte[] buffer) throws IOException;
 
+	public void readFully(byte[] buffer, int off, int length)
+			throws IOException;
+
 	public int read(byte[] buffer, int start, int length) throws IOException;
 
 	public int read() throws IOException;
