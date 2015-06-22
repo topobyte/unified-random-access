@@ -82,7 +82,7 @@ public class InputStreamFileAccess implements FileAccess
 			done += got;
 			todo -= got;
 		}
-		filePointer += buffer.length;
+		filePointer += length;
 	}
 
 	@Override
